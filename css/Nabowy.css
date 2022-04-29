@@ -16,12 +16,26 @@ html {
   --main-transtions: 0.5s;
   --color-of-text: #a9c8f1;
   --Secendry-background-color: #182641;
+  --white-color: white;
+  --main-padding: 20px;
+  --main-margin: 20px;
+  --main-font-size: 15px;
 }
 body {
   font-family: "Cairo", sans-serif;
   font-family: "Open Sans", sans-serif;
   font-family: "Work Sans", sans-serif;
   background-color: var(--Section-background-color);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+  box-shadow: 0 0 80px #ddd inset;
+}
+::-webkit-scrollbar-thumb {
+  box-shadow: 68px -36px 223px 1px var(--main-color) inset;
 }
 .Main-Grid {
   display: grid;
@@ -30,7 +44,7 @@ body {
 }
 .container {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 calc(var(--main-padding) - 10px);
 }
 /* Start  Madia */
 @media (min-width: 768px) {
@@ -53,17 +67,17 @@ body {
 /* End Madia */
 /* Start Download  */
 .Download {
-  padding: 25px 0;
+  padding: calc(var(--main-padding) + 5px) 0;
   background-color: var(--main-color);
 }
 .Download .container {
   text-align: center;
-  font-size: 13px;
-  color: white;
+  font-size: calc(var(--main-font-size) - 2px);
+  color: var(--white-color);
 }
 .Download .container a {
   text-decoration: underline;
-  color: white;
+  color: var(--white-color);
 }
 /* End Download  */
 /* Start Header */
@@ -73,33 +87,30 @@ header {
 header .container {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: calc(var(--main-padding) - 10px) 0;
 }
-header .container label input,
-header .container label ion-icon {
+header .container  input,
+header .container  ion-icon {
   display: none;
 }
-header .container label {
+header .container .links {
   flex-basis: 80%;
 }
 header .container .logo {
   display: flex;
 }
 header .container .logo i {
-  font-size: 30px;
+  font-size: calc(var(--main-font-size) + 15px);
   color: var(--main-color);
-  margin-right: 10px;
+  margin-right: calc(var(--main-margin) - 10px);
 }
 header .container .logo h3 {
-  margin-bottom: 5px;
-  color: white;
+  margin-bottom: calc(var(--main-margin) - 15px);
+  color: var(--white-color);
 }
 header .container .logo p {
-  font-size: 12px;
-  color: white;
-}
-header .container .links {
-  height: 100%;
+  font-size: calc(var(--main-font-size) - 3px);
+  color: var(--white-color);
 }
 header .container .links ul {
   display: flex;
@@ -108,8 +119,8 @@ header .container .links ul {
   height: 100%;
 }
 header .container .links ul li a {
-  color: white;
-  font-size: 17px;
+  color: var(--white-color);
+  font-size: calc(var(--main-font-size) + 2px);
   font-weight: bolder;
   position: relative;
 }
@@ -117,7 +128,7 @@ header .container .links ul li a::after {
   content: "";
   width: 0;
   height: 4px;
-  background-color: white;
+  background-color: var(--white-color);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -130,52 +141,52 @@ header .container .links ul li a:hover::after {
 form {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: var(--main-margin);
 }
 form a {
-  color: white;
+  color: var(--white-color);
   display: flex;
 }
 form a i {
-  margin-left: 7px;
+  margin-left: calc(var(--main-margin) - 13px);
 }
 form input {
-  margin-left: 10px;
+  margin-left: calc(var(--main-margin) - 10px);
   background-color: var(--main-color);
-  padding: 10px;
+  padding: calc(var(--main-padding) - 10px);
   border: none;
   outline: none;
-  color: white;
+  color: var(--white-color);
   border-radius: 20px;
   cursor: pointer;
 }
 @media (max-width: 991px) {
   header .container .logo {
-    padding-left: 20px;
+    padding-left: var(--main-padding);
   }
-  header .container label input,
-  header .container label ion-icon {
+  header .container  input,
+  header .container  ion-icon {
     display: block;
-    padding-right: 20px;
+    padding-right: var(--main-padding);
   }
-  header .container label ion-icon {
-    font-size: 45px;
-    color: white;
+  header .container  ion-icon {
+    font-size: calc(var(--main-font-size) + 30px);
+    color: var(--white-color);
     cursor: pointer;
   }
   header .container label {
     flex-basis: initial;
     order: 7;
   }
-  header .container label input {
+  header .container  input {
     appearance: none;
   }
   header .container .links {
     position: absolute;
     left: -100%;
-    top: 140px;
+    top: 129px;
     width: 100%;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 129px);
     background-color: var(--Section-background-color);
     transition: 0.8s;
     z-index: 99999999999;
@@ -186,12 +197,12 @@ form input {
     flex-direction: column;
     text-align: center;
     justify-content: initial;
-    padding: 50px 0;
+    padding: calc(var(--main-padding) + 30px) 0;
   }
   header .container .links ul li {
-    margin-bottom: 10px;
+    margin-bottom: calc(var(--main-margin) - 10px);
     width: 100%;
-    padding: 10px 0;
+    padding: calc(var(--main-padding) - 10px) 0;
     background-color: var(--dark-color);
     filter: drop-shadow(0 0 15px var(--main-color));
     transition: var(--main-transtions);
@@ -200,9 +211,9 @@ form input {
     background-color: var(--main-color);
   }
   header .container .links ul li a {
-    color: white;
+    color: var(--white-color);
   }
-  header .container label input:checked ~ .links {
+  header .container  input:checked ~ .links {
     left: 0;
   }
   form {
@@ -217,13 +228,13 @@ form input {
 /* End Header */
 /* Start Location */
 .Location {
-  padding: 80px 0;
+  padding: calc(var(--main-padding) - 60px) 0;
 }
 .Location h1 {
-  font-size: 35px;
-  color: white;
+  font-size: calc(var(--main-font-size) + 20px);
+  color: var(--white-color);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--main-margin);
 }
 .Location .container {
   border: 1px solid var(--main-color);
@@ -234,7 +245,7 @@ form input {
 }
 .Location .container .box .Header-Of-box {
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: calc(var(--main-margin) + 60px);
 }
 .Location .container .box .Header-Of-box ul {
   display: flex;
@@ -247,7 +258,7 @@ form input {
   align-items: center;
   width: 100%;
   transition: var(--main-transtions);
-  color: white;
+  color: var(--white-color);
   cursor: pointer;
 }
 .Location .container .box .Header-Of-box ul li:hover {
@@ -265,13 +276,13 @@ form input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: calc(var(--main-margin) + 60px);
 }
 .Location .container .box form input[type="text"] {
   width: 60%;
   border-radius: 0;
-  padding: 20px;
-  background-color: white;
+  padding: var(--main-padding);
+  background-color: var(--white-color);
   color: black;
   cursor: auto;
   border: none;
@@ -281,13 +292,13 @@ form input {
   width: 15%;
   background-color: #f9d856;
   display: flex;
-  padding: 20px 20px;
+  padding: var(--main-padding);
   cursor: pointer;
   width: fit-content;
 }
 @media (max-width: 768px) {
   .Location .container .box .Header-Of-box ul li {
-    font-size: 12px;
+    font-size: calc(var(--main-font-size) - 3px);
   }
 }
 @media (max-width: 575px) {
@@ -298,44 +309,44 @@ form input {
     flex-direction: column;
   }
   .Location .container .box .Header-Of-box ul li {
-    padding: 20px;
-    margin-bottom: 8px;
+    padding: var(--main-padding);
+    margin-bottom: calc(var(--main-margin) - 12px);
   }
 }
 .Location .container .box .Header-Of-box ul li a {
-  color: white;
+  color: var(--white-color);
 }
 .Location .container .box form .icone input {
   background-color: transparent;
   padding: 0;
   color: black;
-  margin-right: 10px;
-  font-size: 16px;
+  margin-right: calc(var(--main-margin) - 10px);
+  font-size: calc(var(--main-font-size) + 1px);
 }
 .Location .container .Select {
   display: flex;
-  margin-bottom: 80px;
+  margin-bottom: calc(var(--main-margin) + 60px);
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .Location .container .Select .text {
   flex-basis: 28%;
-  padding: 20px;
+  padding: var(--main-padding);
 }
 .Location .container .Select .text h3 {
-  margin-bottom: 20px;
-  color: white;
+  margin-bottom: var(--main-margin);
+  color: var(--white-color);
   font-weight: normal;
-  font-size: 16px;
+  font-size: calc(var(--main-font-size) + 1px);
 }
 .Location .container .Select .text h3:nth-child(3) {
   color: #f9d856;
-  margin-bottom: 40px;
+  margin-bottom: calc(var(--main-margin) + 20px);
   font-weight: bolder;
 }
 .Location .container .Select .text p {
-  font-size: 14px;
-  color: white;
+  font-size: calc(var(--main-font-size) - 1px);
+  color: var(--white-color);
 }
 .Location .container .Select .form {
   flex-basis: 50%;
@@ -346,8 +357,8 @@ form input {
 .Location .container .Select .form input {
   width: 100%;
   height: fit-content;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+  padding: calc(var(--main-padding) - 10px) var(--main-padding);
+  margin-bottom: var(--main-margin);
   border-radius: 5px;
   border: none;
   outline: none;
@@ -359,7 +370,7 @@ form input {
 }
 .Location .container .Select .Map button {
   height: fit-content;
-  padding: 12px 8px;
+  padding: calc(var(--main-padding) - 8px) calc(var(--main-padding) - 12px);
   background-color: transparent;
   border: 1px solid #ececec;
   outline: none;
@@ -369,12 +380,12 @@ form input {
   background-color: #39558352;
 }
 .Location .container .Select .Map button a {
-  color: white;
-  font-size: 15px;
+  color: var(--white-color);
+  font-size: var(--main-font-size);
 }
 .Location .container .Select .Map button a i {
-  font-size: 15px;
-  margin-right: 6px;
+  font-size: var(--main-font-size);
+  margin-right: calc(var(--main-margin) - 14px);
 }
 @media (max-width: 768px) {
   .Location .container .Select {
@@ -399,22 +410,22 @@ form input {
 /* End Location */
 /* Start Experience */
 .Experience {
-  padding: 50px 0;
+  padding: calc(var(--main-padding) + 30px) 0;
 }
 .Experience .container .box {
-  padding-bottom: 50px;
+  padding-bottom: calc(var(--main-padding) + 30px);
   text-align: center;
 }
 .Experience .container .box .child-Of-box .icone i {
-  margin-bottom: 20px;
-  font-size: 50px;
+  margin-bottom: var(--main-margin);
+  font-size: calc(var(--main-font-size) + 35px);
   color: var(--main-color);
 }
 .Experience .container .box .child-Of-box .text h3 {
-  color: white;
+  color: var(--white-color);
   font-weight: normal;
-  font-size: 25px;
-  margin-bottom: 20px;
+  font-size: calc(var(--main-font-size) + 10px);
+  margin-bottom: var(--main-margin);
 }
 .Experience .container .box .child-Of-box .text p {
   color: #ffffff82;
@@ -431,7 +442,7 @@ form input {
   position: relative;
 }
 .Experience .container .End-Of-Experience .text {
-  padding: 0 40px;
+  padding: 0 calc(var(--main-padding) + 20px);
   width: 100%;
   position: absolute;
   left: 50%;
@@ -440,28 +451,28 @@ form input {
 }
 .Experience .container .End-Of-Experience .text q {
   display: block;
-  padding-bottom: 20px;
-  font-size: 20px;
-  color: white;
+  padding-bottom: var(--main-padding);
+  font-size: calc(var(--main-font-size) + 5px);
+  color: var(--white-color);
 }
 .Experience .container .End-Of-Experience p {
   color: var(--color-of-text);
 }
 @media (max-width: 768px) {
   .Experience .container .End-Of-Experience .text q {
-    font-size: 15px;
+    font-size: var(--main-font-size);
     line-height: 1.6;
   }
 }
 /* End Experience */
 /* Start Featured */
 .Featured {
-  padding: 50px 0;
+  padding: calc(var(--main-padding) + 30px) 0;
   text-align: center;
 }
 .Featured h3 {
-  font-size: 30px;
-  color: white;
+  font-size: calc(var(--main-font-size) + 15px);
+  color: var(--white-color);
   margin-bottom: 30px;
 }
 .Featured .container .box .Child-Of-box {
@@ -470,59 +481,59 @@ form input {
 }
 .Featured .container .box .Child-Of-box .imge {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: var(--main-margin);
 }
 .Featured .container .box .Child-Of-box .imge img {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
 .Featured .container .box .Child-Of-box .text {
-  padding: 0 20px;
+  padding: 0 var(--main-padding);
 }
 .Featured .container .box .Child-Of-box .text a {
   display: block;
-  color: white;
-  font-size: 19px;
+  color: var(--white-color);
+  font-size: calc(var(--main-font-size) + 4px);
   font-weight: normal;
-  margin-bottom: 20px;
+  margin-bottom: var(--main-margin);
 }
 .Featured .container .box .Child-Of-box .text p {
   color: var(--color-of-text);
-  padding: 15px;
+  padding: calc(var(--main-padding) - 5px);
   line-height: 1.6;
 }
 /* End Featured */
 /* Start Industry */
 .Industry {
-  padding: 50px 0;
+  padding: calc(var(--main-padding) + 30px) 0;
 }
 .Industry .container {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--white-color);
 }
 .Industry .container h3 {
-  margin: 40px 0;
-  color: white;
+  margin: calc(var(--main-margin) + 20px) 0;
+  color: var(--white-color);
   font-weight: normal;
   text-align: center;
-  font-size: 25px;
+  font-size: calc(var(--main-font-size) + 10px);
 }
 .Industry .container .box {
   border: 1px solid var(--main-color);
   background-color: var(--Secendry-background-color);
-  padding: 15px;
-  margin-bottom: 100px;
+  padding: calc(var(--main-padding) - 5px);
+  margin-bottom: calc(var(--main-margin) + 80px);
   box-shadow: 0px 0px 17px 1px var(--main-color);
 }
 .Industry .container .box a {
   display: block;
-  padding: 10px;
-  color: white;
+  padding: calc(var(--main-padding) - 10px);
+  color: var(--white-color);
   font-weight: normal;
   transition: var(--main-transtions);
 }
 @media (max-width: 768px) {
   .Industry .container .box a {
-    font-size: 13px;
+    font-size: calc(var(--main-font-size) - 2px);
   }
 }
 .Industry .container .box a:hover {
@@ -544,12 +555,12 @@ footer .container {
 footer .container a {
   width: fit-content;
   display: block;
-  margin-left: 10px;
+  margin-left: calc(var(--main-margin) - 10px);
   font-weight: normal;
-  color: white;
+  color: var(--white-color);
   text-decoration: underline;
 }
 footer .container p {
-  color: white;
+  color: var(--white-color);
 }
 /* End Footer */
